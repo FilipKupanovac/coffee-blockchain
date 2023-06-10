@@ -27,9 +27,10 @@ contract("SupplyChain", function(accounts) {
             console.log(resultBufferOne)
 
             assert.equal(resultBufferOne[4].toString(), itemPrice.toString(), "PRICE NOT EQUAL"); // Updated assertion
+            assert.equal(resultBufferOne[1].toString(), itemType.toString(), "TYPE NOT EQUAL"); // Updated assertion
     });
 
-    it("Expected price is different that existing", async () => {
+    it("Expected details are different that existing", async () => {
         
             const supplyChain = await SupplyChain.deployed(); // Updated contract name
 
