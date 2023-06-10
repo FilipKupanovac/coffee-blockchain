@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-contract CoffeeChain {
+contract SupplyChain {
 
     struct Item {
         uint upc;    // Universal Product Code
@@ -31,12 +31,12 @@ contract CoffeeChain {
         nextUpc += 1;
     }
 
-    function getCoffee(uint _upc) public view returns (uint, string memory, address, address, uint) {
+    function getItem(uint _upc) public view returns (uint, string memory, address, address, uint) {
         Item memory item = items[_upc];
         return (item.upc, item.itemType, item.producer, item.consumer, item.itemPrice);
     }
 
-    function buyCoffee(uint _upc) public payable {
+    function buyItem(uint _upc) public payable {
         Item memory item = items[_upc];
         require(item.consumer == address(0), "This item has already been purchased");
         require(msg.value >= item.itemPrice, "Insufficient payment");
