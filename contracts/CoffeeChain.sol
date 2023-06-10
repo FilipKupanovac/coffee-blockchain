@@ -3,59 +3,64 @@ pragma solidity ^0.8.7;
 
 contract CoffeeChain {
 
-    struct Coffee {
+    struct Item {
         uint upc;    // Universal Product Code
+        string itemType;
         address payable producer;
         address payable consumer;
         uint itemPrice; // In wei, 1 ETH = 10^18 Wei
     }
 
-    mapping(uint => Coffee) public coffees;
+    mapping(uint => Item) public items;
     uint public nextUpc;
 
     constructor() {
         nextUpc = 1;
     }
 
-    function addCoffee(uint _price) public {
-        Coffee memory newCoffee = Coffee({
+    function addItem(uint _price, string memory itemType) public {
+        Item memory newItem = Item({
             upc: nextUpc,
+            itemType: itemType,
             producer: payable(msg.sender),
             consumer: payable(address(0)),
             itemPrice: _price
         });
         
-        coffees[nextUpc] = newCoffee;
+        items[nextUpc] = newItem;
         nextUpc += 1;
     }
 
-    function getCoffee(uint _upc) public view returns (uint, address, address, uint) {
-        Coffee memory coffee = coffees[_upc];
-        return (coffee.upc, coffee.producer, coffee.consumer, coffee.itemPrice);
+    function getCoffee(uint _upc) public view returns (uint, string memory, address, address, uint) {
+        Item memory item = items[_upc];
+        return (item.upc, item.itemType, item.producer, item.consumer, item.itemPrice);
     }
 
     function buyCoffee(uint _upc) public payable {
-        Coffee memory coffee = coffees[_upc];
-        require(coffee.consumer == address(0), "This coffee has already been purchased");
-        require(msg.value >= coffee.itemPrice, "Insufficient payment");
-        coffee.consumer = payable(msg.sender);
-        coffee.producer.transfer(msg.value);
+        Item memory item = items[_upc];
+        require(item.consumer == address(0), "This item has already been purchased");
+        require(msg.value >= item.itemPrice, "Insufficient payment");
+        item.consumer = payable(msg.sender);
+        item.producer.transfer(msg.value);
     }
 
     function fetchItemBufferOne(uint _upc) public view returns (
         uint upc,
+        string memory itemType,
         address producer,
         address consumer,
         uint itemPrice
     ) {
-        upc = coffees[_upc].upc;
-        producer = coffees[_upc].producer;
-        consumer = coffees[_upc].consumer;
-        itemPrice = coffees[_upc].itemPrice;
+        upc = items[_upc].upc;
+        itemType = items[_upc].itemType;
+        producer = items[_upc].producer;
+        consumer = items[_upc].consumer;
+        itemPrice = items[_upc].itemPrice;
     
         return
         (
             upc,
+            itemType,
             producer,
             consumer,
             itemPrice
