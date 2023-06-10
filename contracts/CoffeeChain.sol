@@ -61,24 +61,4 @@ contract CoffeeChain {
             itemPrice
         );
     }
-
-    function fetchItemBufferTwo(uint _upc) public view returns (
-        uint upc,
-        address producer,
-        address consumer,
-        uint itemPrice
-    ) {
-        upc = coffees[_upc].upc;
-        producer = coffees[_upc].producer;
-        consumer = coffees[_upc].consumer;
-        itemPrice = coffees[_upc].itemPrice;
-    
-        return
-        (
-            upc,
-            producer,
-            consumer,
-            itemPrice
-        );
-    }
 }
