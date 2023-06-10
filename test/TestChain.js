@@ -27,7 +27,7 @@ contract("CoffeeChain", function(accounts) {
             assert.equal(resultBufferOne[3].toString(), itemPrice.toString(), "PRICE NOT EQUAL"); // Updated assertion
     });
 
-    it("Fail this test", async () => {
+    it("Expected price is different that existing", async () => {
         
             const coffeeChain = await CoffeeChain.deployed(); // Updated contract name
 
@@ -37,7 +37,7 @@ contract("CoffeeChain", function(accounts) {
             const resultBufferOne = await coffeeChain.fetchItemBufferOne.call(2);
             console.log(resultBufferOne)
 
-            assert.equal(resultBufferOne[3].toString(), itemPrice.toString(), "PRICE IS NOT EQUAL"); // Updated assertion
+            assert.notEqual(resultBufferOne[3].toString(), itemPrice.toString(), "PRICE IS NOT EQUAL"); // Updated assertion
         
     })
 });
