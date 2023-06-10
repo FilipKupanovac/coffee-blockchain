@@ -1,5 +1,5 @@
-var coffee = artifacts.require("./coffee.sol");
+var supplyChain = artifacts.require("./SupplyChain.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(coffee);
-};
+  deployer.deploy(supplyChain)
+}
