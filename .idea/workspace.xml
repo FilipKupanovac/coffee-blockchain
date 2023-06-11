@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e3087023-3bae-41d0-b1cd-ac500247a913" name="Changes" comment="rename CoffeeChain to SupplyChain">
+      <change beforePath="$PROJECT_DIR$/build/contracts/coffee.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/2_deploy_contracts.js" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/2_deploy_contracts.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="rename CoffeeChain to SupplyChain" />
+        <option name="rewordedMessage" value="rename CoffeeChain to SupplyChain" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="a461aa28fcb47755df046a78eab34b347a4df49b" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2R0pY1oepmuKHYajCkHOsbTe9T9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/domagojbunoza/Desktop/FERIT/Blockchain/coffee-blockchain&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e3087023-3bae-41d0-b1cd-ac500247a913" name="Changes" comment="" />
+      <created>1686396897773</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686396897773</updated>
+    </task>
+    <task id="LOCAL-00001" summary="remove redundant function">
+      <created>1686397162350</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686397162350</updated>
+    </task>
+    <task id="LOCAL-00002" summary="rename Coffee to Item, add itemType parameter">
+      <created>1686398424827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686398424827</updated>
+    </task>
+    <task id="LOCAL-00003" summary="rename CoffeeChain to SupplyChain">
+      <created>1686399209995</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686399209995</updated>
+    </task>
+    <task id="LOCAL-00004" summary="rename CoffeeChain to SupplyChain">
+      <created>1686399231609</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686399231609</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove redundant function" />
+    <MESSAGE value="rename Coffee to Item, add itemType parameter" />
+    <MESSAGE value="rename CoffeeChain to SupplyChain" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename CoffeeChain to SupplyChain" />
+  </component>
+</project>
