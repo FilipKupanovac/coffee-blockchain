@@ -16,32 +16,32 @@ contract("SupplyChain", function(accounts) {
     console.log("consumer Account ", accounts[1]);
 
     it("Testing smart contract function addItem(uint _price, string memory itemType) that allows adding new item to the market", async () => {
-            const supplyChain = await SupplyChain.deployed(); // Updated contract name
+            const supplyChain = await SupplyChain.deployed();
 
             let transaction = await supplyChain.addItem(
                 itemPrice, //Wei price of item
                 itemType
             );
 
-            const resultBufferOne = await supplyChain.fetchItemBufferOne.call(upc);
-            console.log(resultBufferOne)
+            const result = await supplyChain.getItem.call(upc);
+            console.log(result)
 
-            assert.equal(resultBufferOne[4].toString(), itemPrice.toString(), "PRICE NOT EQUAL"); // Updated assertion
-            assert.equal(resultBufferOne[1].toString(), itemType.toString(), "TYPE NOT EQUAL"); // Updated assertion
+            assert.equal(result[4].toString(), itemPrice.toString(), "PRICE NOT EQUAL");
+            assert.equal(result[1].toString(), itemType.toString(), "TYPE NOT EQUAL");
     });
 
-    it("Expected details are different that existing", async () => {
+    it("Expected details are different than existing", async () => {
         
-            const supplyChain = await SupplyChain.deployed(); // Updated contract name
+            const supplyChain = await SupplyChain.deployed();
 
             let transaction = await supplyChain.addItem(
                 2*10^13, //Wei price of item
                 "Banana"
             );
-            const resultBufferOne = await supplyChain.fetchItemBufferOne.call(2);
-            console.log(resultBufferOne)
+            const result = await supplyChain.getItem.call(2);
+            console.log(result)
 
-            assert.notEqual(resultBufferOne[4].toString(), itemPrice.toString(), "PRICE IS NOT EQUAL"); // Updated assertion
-            assert.notEqual(resultBufferOne[1].toString(), itemType.toString(), "TYPE IS NOT EQUAL"); // Updated assertion
+            assert.notEqual(result[4].toString(), itemPrice.toString(), "PRICE IS NOT EQUAL");
+            assert.notEqual(result[1].toString(), itemType.toString(), "TYPE IS NOT EQUAL");
     })
 });

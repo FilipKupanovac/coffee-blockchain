@@ -31,7 +31,8 @@ contract SupplyChain {
         nextUpc += 1;
     }
 
-    function getItem(uint _upc) public view returns (uint, string memory, address, address, uint) {
+    function getItem(uint _upc) 
+    public view returns (uint, string memory, address, address, uint) {
         Item memory item = items[_upc];
         return (item.upc, item.itemType, item.producer, item.consumer, item.itemPrice);
     }
@@ -42,28 +43,5 @@ contract SupplyChain {
         require(msg.value >= item.itemPrice, "Insufficient payment");
         item.consumer = payable(msg.sender);
         item.producer.transfer(msg.value);
-    }
-
-    function fetchItemBufferOne(uint _upc) public view returns (
-        uint upc,
-        string memory itemType,
-        address producer,
-        address consumer,
-        uint itemPrice
-    ) {
-        upc = items[_upc].upc;
-        itemType = items[_upc].itemType;
-        producer = items[_upc].producer;
-        consumer = items[_upc].consumer;
-        itemPrice = items[_upc].itemPrice;
-    
-        return
-        (
-            upc,
-            itemType,
-            producer,
-            consumer,
-            itemPrice
-        );
     }
 }
